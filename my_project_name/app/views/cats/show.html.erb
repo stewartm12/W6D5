@@ -6,6 +6,22 @@
     <th>Value</th>
   </tr>
   <tr>
-    <% [:birth_date, :age, :color, :sex].each do |attribute|%>
+    <td> birth_date </td>
+    <td><%= @cat.birth_date %></td>
+  </tr>
+
+  <tr>
+    <td> color </td>
+    <td><%= @cat.color %></td>
+  </tr>
+
+  <tr>
+    <td> age </td>
+    <td><%= @cat.age %></td>
+  </tr>
+
+  <tr>
+    <td> sex </td>
+    <td><%= @cat.sex %></td>
   </tr>
 </table>
