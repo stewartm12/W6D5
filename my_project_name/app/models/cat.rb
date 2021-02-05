@@ -16,11 +16,20 @@ require 'date'
 #
 class Cat < ApplicationRecord
   include ActionView::Helpers::DateHelper
-
+  COLORS = %w(black white red blue)
+  
+  validates :color, inclusion: { in: COLORS}
+  validates :sex, inclusion: { in: %w(M F)}
+  validates :birth_date, :description, presence: true
+  
   def age
-    birth_year = :birth_date.to_s[0..3].to_i
-    todays_year = Date.today.to_s[0..3].to_i
+    # birth_year = :birth_date.to_s[0..3].to_i
+    # todays_year = Date.today.to_s[0..3].to_i
 
-    todays_year - birth_year 
+    # todays_year - birth_year 
+    time_ago_in_words(birth_date)
   end
+
+  
+
 end
